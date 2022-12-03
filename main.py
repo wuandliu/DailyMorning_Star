@@ -114,12 +114,12 @@ def get_ciba():
 def send_message(to_user, access_token, city_name, weather, max_temperature, min_temperature, note_ch, note_en):
     url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}".format(access_token)
     week_list = [ "星期一", "星期二", "星期三", "星期四", "星期五", "星期六","星期日"]
-    #year = localtime().tm_year
-    #month = localtime().tm_mon
-    #day = localtime().tm_mday
+    year = localtime().tm_year
+    month = localtime().tm_mon
+    day = localtime().tm_mday + 1
     #today = datetime.date(datetime(year=year, month=month, day=day))
-    nowtime = datetime.utcnow() + timedelta(hours=8)  # 东八区时间
-    today = datetime.strptime(str(nowtime.date()), "%Y-%m-%d") #今天的日期
+    #nowtime = datetime.utcnow() + timedelta(hours=8)  # 东八区时间
+    #today = datetime.strptime(str(nowtime.date()), "%Y-%m-%d") #今天的日期
     week = week_list[today.isoweekday() % 7]
     # 获取在一起的日子的日期格式
     love_year = int(config["love_date"].split("-")[0])
