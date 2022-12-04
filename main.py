@@ -116,7 +116,7 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
     week_list = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
     year = localtime().tm_year
     month = localtime().tm_mon
-    day = localtime().tm_mday + 1
+    day = localtime().tm_mday
     today = datetime.date(datetime(year=year, month=month, day=day))
     #nowtime = datetime.utcnow() + timedelta(hours=8)  # 东八区时间
     #today = datetime.strptime(str(nowtime.date()), "%Y-%m-%d") #今天的日期
